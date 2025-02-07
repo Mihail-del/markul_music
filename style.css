@@ -1,0 +1,312 @@
+@font-face{
+    font-family: Cancione;
+    src: url(fonts/Cancione.otf);
+}
+
+@font-face{
+    font-family: Chekharda;
+    src: url(fonts/Chekharda.ttf);
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #3e3e3e #1d1c1c;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #3e3e3e;
+    border: 3px dotted #1d1c1c;
+  }
+
+body, html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Chekharda, Cancione, sans-serif;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    background: #1d1c1c;
+}
+
+#toggle-sound{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: 0;
+    width: 3%;
+    aspect-ratio: 1/1;
+}
+
+.header{
+    font-family: Cancione;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#4e1717, #1d1c1c);
+    color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    scroll-snap-align: start;
+}
+
+.header h1{
+    text-align: center;
+    font-size: 128px;
+    margin: 0;
+    padding: 0;
+}
+
+.header h2{
+    text-align: center;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.album{
+    font-family: Cancione;
+    width: 100%;
+    height: 100vh;
+    background: #1d1c1c;
+    color: #f0f8ff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    scroll-snap-align: start;
+}
+
+.album h1{
+    text-align: center;
+    font-size: 64px;
+    margin: 0;
+    padding: 0;
+}
+
+.album h2{
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
+    padding: 15px 30px;
+    background: linear-gradient(#4e1717, #4e17176e);
+    border-radius: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.album h2:hover{
+    background: linear-gradient(#4e1717, #4e1717);
+    filter: drop-shadow(0 0 15px #4e1717);
+    transform: scale(1.05);
+}
+
+
+
+
+
+.top-gradient{
+    height: 20%;
+    width: 100%;
+    background: linear-gradient(#1d1c1c, #1d1c1c00);
+    position: absolute;
+    top: 0%;
+}
+
+.bottom-gradient{
+    height: 20%;
+    width: 100%;
+    background: linear-gradient(#1d1c1c00, #1d1c1c);
+    position: absolute;
+    bottom: 0%;
+}
+
+
+.mdga, .pervyi, .osadki, .korni, .temper, .kolyb, .sczast, .stary, .mesto, .economy{
+    width: 100%;
+    height: 100vh;
+    background: #1d1c1c;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.mdga-main, .pervyi-main, .osadki-main, .korni-main, .temper-main, .kolyb-main, .sczast-main, .stary-main, .mesto-main, .economy-main{
+    width: 100%;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mdga-main img, .pervyi-main img, .osadki-main img, .korni-main img, .temper-main img, .kolyb-main img, .sczast-main img, .stary-main img, .mesto-main img, .economy-main img{
+    max-height: 30vh;
+    max-width: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 5%;
+}
+
+.mdga-main h2, .pervyi-main h2, .osadki-main h2, .korni-main h2, .temper-main h2, .kolyb-main h2, .sczast-main h2, .stary-main h2, .mesto-main h2, .economy-main h2{
+    font-size: 28px;
+    color: #f0f8ff;
+    margin: 10px;
+    text-align: center;
+}
+
+.mdga-text, .pervyi-text, .osadki-text, .korni-text, .temper-text, .kolyb-text, .sczast-text, .stary-text, .mesto-text, .economy-text{
+    height: 40vh;
+    width: 80%;
+    position: relative;
+    overflow: hidden;
+}
+
+.mdga-liric, .pervyi-liric, .osadki-liric, .korni-liric, .temper-liric, .kolyb-liric, .sczast-liric, .stary-liric, .mesto-liric, .economy-liric{
+	align-self: center;
+	padding: 40px;
+	margin: 0px 0px;
+	width: 90%;
+	height: 300px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	font-size: 24px;
+    color: #eee;
+	transition: scroll-behavior 1s ease-in-out;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+}
+
+.mdga-liric::-webkit-scrollbar, .pervyi-liric::-webkit-scrollbar, .osadki-liric::-webkit-scrollbar, .korni-liric::-webkit-scrollbar, .temper::-webkit-scrollbar, .kolyb::-webkit-scrollbar, .sczast::-webkit-scrollbar, .stary::-webkit-scrollbar, .mesto::-webkit-scrollbar, .economy::-webkit-scrollbar {
+	display: none;
+}
+
+.mdga-line, .pervyi-line, .osadki-line, .korni-line, .temper-line, .kolyb-line, .sczast-line, .stary-line, .mesto-line, .economy-line{
+	margin-bottom: 50px;
+	opacity: 0.4;
+	filter: blur(2px);
+	transition: 0.5s;
+
+}
+
+.mdga-line.active, .pervyi-line.active, .osadki-line.active, .korni-line.active, .temper-line.active, .kolyb-line.active, .sczast-line.active, .stary-line.active, .mesto-line.active, .economy-line.active {
+	opacity: 1;
+	text-shadow: #eee 1px 0 2px;
+	filter: blur(0px);
+	transition: 0.5s;
+}
+  
+
+
+
+
+
+
+
+/* =======================Tablet====================== */
+@media(min-width: 760px){
+
+.header h1{
+    font-size: 196px;
+}
+
+.header h2{
+    font-size: 42px;
+}
+
+
+.album h1{
+    font-size: 128px;
+}
+
+.album h2{
+    font-size: 36px;
+}
+
+
+.mdga, .pervyi, .osadki, .korni, .temper, .kolyb, .sczast, .stary, .mesto, .economy{
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.mdga-main, .pervyi-main, .osadki-main, .korni-main, .temper-main, .kolyb-main, .sczast-main, .stary-main, .mesto-main, .economy-main{
+    width: 30%;
+}
+
+.mdga-text, .pervyi-text, .osadki-text, .korni-text, .temper-text, .kolyb-text, .sczast-text, .stary-text, .mesto-text, .economy-text{
+    width: 70%;
+}
+
+.mdga-liric, .pervyi-liric, .osadki-liric, .korni-liric, .temper-liric, .kolyb-liric, .sczast-liric, .stary-liric, .mesto-liric, .economy-liric{
+    font-size: 36px;
+}
+
+#lowercase{
+    font-size: 28px;
+}
+
+}
+
+
+
+/* =======================Laptop====================== */
+@media(min-width: 1024px){
+
+.header h1{
+    font-size: 256px;
+}
+
+.header h2{
+    font-size: 48px;
+}
+
+
+.album h1{
+    font-size: 164px;
+}
+
+.album h2{
+    font-size: 48px;
+}
+
+
+}
+
+
+
+/* =======================Laptop L====================== */
+@media(min-width: 1440px){
+
+.header h1{
+    font-size: 384px;
+}
+
+.header h2{
+    font-size: 52px;
+}
+    
+
+.album h1{
+    font-size: 196px;
+}
+
+.album h2{
+    font-size: 48px;
+}
+    
+}
